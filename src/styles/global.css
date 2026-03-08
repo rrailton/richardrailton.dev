@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-stone-100 text-stone-800 dark:bg-stone-900 dark:text-stone-200;
+    @apply transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-stone-300 dark:bg-stone-700;
+  }
+}
+
+/* Scroll-triggered entrance animations */
+.animate {
+  @apply opacity-0 translate-y-4;
+  animation: enter 0.5s ease forwards;
+}
+
+@keyframes enter {
+  to {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Stagger children animations */
+.animate > * {
+  @apply opacity-0 translate-y-2;
+  animation: enter 0.4s ease forwards;
+}
+
+.animate > *:nth-child(1) { animation-delay: 0ms; }
+.animate > *:nth-child(2) { animation-delay: 100ms; }
+.animate > *:nth-child(3) { animation-delay: 200ms; }
+.animate > *:nth-child(4) { animation-delay: 300ms; }
+.animate > *:nth-child(5) { animation-delay: 400ms; }
+.animate > *:nth-child(6) { animation-delay: 500ms; }
+.animate > *:nth-child(7) { animation-delay: 600ms; }
+.animate > *:nth-child(8) { animation-delay: 700ms; }

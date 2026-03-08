@@ -1,0 +1,45 @@
+---
+import fs from "node:fs";
+
+let contributions = null;
+try {
+  const raw = fs.readFileSync("src/data/contributions.json", "utf-8");
+  contributions = JSON.parse(raw);
+} catch {
+  // contributions.json not available — skip rendering
+}
+---
+
+{contributions && (
+  <section id="github" class="max-w-3xl mx-auto px-6 py-16 border-t border-stone-200 dark:border-stone-800">
+    <h2 class="text-2xl font-light tracking-tight text-stone-900 dark:text-stone-100 mb-2">Contributions</h2>
+    <p class="text-sm text-stone-400 dark:text-stone-500 mb-8">
+      {contributions.totalContributions} contributions in the last year
+    </p>
+
+    <div class="overflow-x-auto">
+      <div class="flex gap-[3px] min-w-max">
+        {contributions.weeks.map((week: any) => (
+          <div class="flex flex-col gap-[3px]">
+            {week.contributionDays.map((day: any) => (
+              <div
+                title={`${day.date}: ${day.contributionCount} contributions`}
+                class="w-[11px] h-[11px] rounded-sm"
+                style={`background-color: ${day.color}`}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <a
+      href="https://github.com/rrailton"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block mt-4 text-sm text-stone-400 hover:text-stone-700 dark:hover:text-stone-300 transition-colors"
+    >
+      View on GitHub &rarr;
+    </a>
+  </section>
+)}

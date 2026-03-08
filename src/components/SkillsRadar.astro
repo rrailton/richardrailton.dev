@@ -1,0 +1,60 @@
+---
+import { skills } from "../data/content";
+const skillsData = JSON.stringify(skills);
+---
+
+<section id="skills" class="max-w-3xl mx-auto px-6 py-16 border-t border-stone-200 dark:border-stone-800">
+  <h2 class="text-2xl font-light tracking-tight text-stone-900 dark:text-stone-100 mb-10">Skills</h2>
+  <div class="max-w-md mx-auto">
+    <canvas id="skills-radar" width="400" height="400"></canvas>
+  </div>
+</section>
+
+<script define:vars={{ skillsData }}>
+  import("chart.js/auto").then(({ default: Chart }) => {
+    const data = JSON.parse(skillsData);
+    const isDark = document.documentElement.classList.contains("dark");
+
+    const textColor = isDark ? "rgba(214, 211, 209, 0.9)" : "rgba(41, 37, 36, 0.8)";
+    const gridColor = isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.08)";
+    const fillColor = isDark ? "rgba(214, 211, 209, 0.08)" : "rgba(41, 37, 36, 0.05)";
+    const borderColor = isDark ? "rgba(214, 211, 209, 0.6)" : "rgba(41, 37, 36, 0.8)";
+
+    const ctx = document.getElementById("skills-radar");
+    new Chart(ctx, {
+      type: "radar",
+      data: {
+        labels: data.labels,
+        datasets: [
+          {
+            label: "Proficiency",
+            data: data.values,
+            backgroundColor: fillColor,
+            borderColor: borderColor,
+            borderWidth: 1.5,
+            pointBackgroundColor: borderColor,
+            pointRadius: 3,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          r: {
+            min: 0,
+            max: 10,
+            ticks: { display: false },
+            grid: { color: gridColor },
+            angleLines: { color: gridColor },
+            pointLabels: {
+              font: { size: 13 },
+              color: textColor,
+            },
+          },
+        },
+        plugins: {
+          legend: { display: false },
+        },
+      },
+    });
+  });
+</script>

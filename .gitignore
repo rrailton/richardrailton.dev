@@ -1,1 +1,13 @@
+# Astro
+node_modules/
+dist/
+.astro/
+
+# Local
+.env
 .worktrees/
+docs/
+.DS_Store
+
+# Data fetched at build time
+src/data/contributions.json
