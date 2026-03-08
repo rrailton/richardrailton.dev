@@ -95,16 +95,14 @@ export const projects = [
 ];
 
 // Skill proficiency: 1-10 scale
-// Based on resume: SQL & dbt are primary tools, Python secondary, strong BI, solid data engineering
 export const skills = {
   labels: [
     "SQL",
-    "Python",
-    "dbt / Data Modeling",
+    "dbt",
     "BI & Visualization",
+    "Agent-Driven Development",
+    "Python",
     "Data Engineering",
-    "Statistical Analysis",
-    "R",
   ],
-  values: [9, 7, 9, 8, 7, 6, 4],
+  values: [9, 9, 8, 7, 6, 6],
 };
