@@ -1,6 +1,5 @@
 export const personal = {
   name: "Richard Railton",
-  title: "Data Analytics & Data Science",
   location: "San Francisco Bay Area",
   bio: "Analytics Engineer specializing in building scalable, production-grade data products with dbt. Combines analytical depth with engineering rigor to design reliable data architectures, automated observability, and self-service reporting that drive revenue growth and product innovation.",
   email: "data@richardrailton.dev",
