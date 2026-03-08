@@ -4,12 +4,10 @@ import { skills } from "../data/content";
 
 <section id="skills" class="max-w-3xl mx-auto px-6 py-16 border-t border-stone-200 dark:border-stone-800">
   <h2 class="text-2xl font-light tracking-tight text-stone-900 dark:text-stone-100 mb-10">Skills</h2>
-  <div class="max-w-md mx-auto">
+  <div class="max-w-lg mx-auto">
     <canvas
       id="skills-radar"
       data-skills={JSON.stringify(skills)}
-      width="400"
-      height="400"
     ></canvas>
   </div>
 </section>
@@ -19,46 +17,68 @@ import { skills } from "../data/content";
 
   const canvas = document.getElementById("skills-radar") as HTMLCanvasElement;
   const data = JSON.parse(canvas.dataset.skills!);
-  const isDark = document.documentElement.classList.contains("dark");
+  let chart: Chart | null = null;
 
-  const textColor = isDark ? "rgba(214, 211, 209, 0.9)" : "rgba(41, 37, 36, 0.8)";
-  const gridColor = isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.08)";
-  const fillColor = isDark ? "rgba(214, 211, 209, 0.08)" : "rgba(41, 37, 36, 0.05)";
-  const borderColor = isDark ? "rgba(214, 211, 209, 0.6)" : "rgba(41, 37, 36, 0.8)";
+  function getColors() {
+    const isDark = document.documentElement.classList.contains("dark");
+    return {
+      text: isDark ? "rgba(214, 211, 209, 0.9)" : "rgba(41, 37, 36, 0.8)",
+      grid: isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.08)",
+      fill: isDark ? "rgba(214, 211, 209, 0.08)" : "rgba(41, 37, 36, 0.05)",
+      border: isDark ? "rgba(214, 211, 209, 0.6)" : "rgba(41, 37, 36, 0.8)",
+    };
+  }
 
-  new Chart(canvas, {
-    type: "radar",
-    data: {
-      labels: data.labels,
-      datasets: [
-        {
-          label: "Proficiency",
-          data: data.values,
-          backgroundColor: fillColor,
-          borderColor: borderColor,
-          borderWidth: 1.5,
-          pointBackgroundColor: borderColor,
-          pointRadius: 3,
+  function renderChart() {
+    if (chart) chart.destroy();
+    const c = getColors();
+
+    chart = new Chart(canvas, {
+      type: "radar",
+      data: {
+        labels: data.labels,
+        datasets: [
+          {
+            label: "Proficiency",
+            data: data.values,
+            backgroundColor: c.fill,
+            borderColor: c.border,
+            borderWidth: 1.5,
+            pointBackgroundColor: c.border,
+            pointRadius: 3,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        layout: {
+          padding: 10,
         },
-      ],
-    },
-    options: {
-      scales: {
-        r: {
-          min: 0,
-          max: 10,
-          ticks: { display: false },
-          grid: { color: gridColor },
-          angleLines: { color: gridColor },
-          pointLabels: {
-            font: { size: 13 },
-            color: textColor,
+        scales: {
+          r: {
+            min: 0,
+            max: 10,
+            ticks: { display: false },
+            grid: { color: c.grid },
+            angleLines: { color: c.grid },
+            pointLabels: {
+              font: { size: 13 },
+              color: c.text,
+            },
           },
         },
+        plugins: {
+          legend: { display: false },
+        },
       },
-      plugins: {
-        legend: { display: false },
-      },
-    },
+    });
+  }
+
+  renderChart();
+
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    // Small delay to let the class toggle complete first
+    setTimeout(renderChart, 50);
   });
 </script>
