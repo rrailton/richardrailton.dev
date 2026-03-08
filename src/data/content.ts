@@ -98,7 +98,7 @@ export const projects = [
 export const skills = {
   labels: [
     "SQL",
-    "dbt",
+    "Analytics Engineering",
     "BI & Visualization",
     "Agent-Driven Development",
     "Python",
