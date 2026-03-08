@@ -8,6 +8,22 @@ try {
 } catch {
   // contributions.json not available — skip rendering
 }
+
+function getLevel(count: number): number {
+  if (count === 0) return 0;
+  if (count <= 3) return 1;
+  if (count <= 6) return 2;
+  if (count <= 9) return 3;
+  return 4;
+}
+
+const levelClasses = [
+  "bg-stone-200 dark:bg-stone-800",
+  "bg-emerald-200 dark:bg-emerald-900",
+  "bg-emerald-400 dark:bg-emerald-700",
+  "bg-emerald-500 dark:bg-emerald-500",
+  "bg-emerald-700 dark:bg-emerald-400",
+];
 ---
 
 {contributions && (
@@ -17,15 +33,14 @@ try {
       {contributions.totalContributions} contributions in the last year
     </p>
 
-    <div class="overflow-x-auto">
-      <div class="flex gap-[3px] min-w-max">
+    <div>
+      <div class="flex gap-[2px]">
         {contributions.weeks.map((week: any) => (
-          <div class="flex flex-col gap-[3px]">
+          <div class="flex flex-col gap-[2px]">
             {week.contributionDays.map((day: any) => (
               <div
                 title={`${day.date}: ${day.contributionCount} contributions`}
-                class="w-[11px] h-[11px] rounded-sm"
-                style={`background-color: ${day.color}`}
+                class={`w-[10px] h-[10px] rounded-sm ${levelClasses[getLevel(day.contributionCount)]}`}
               />
             ))}
           </div>
