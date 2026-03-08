@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { projects } from "../../data/content";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout title={`${project.title} — Richard Railton`}>
+  <article class="max-w-3xl mx-auto px-6 py-16">
+    <a
+      href="/#projects"
+      class="text-sm text-stone-400 hover:text-stone-700 dark:hover:text-stone-300 transition-colors"
+    >
+      &larr; Back to home
+    </a>
+
+    <h1 class="mt-6 text-3xl font-light tracking-tight text-stone-900 dark:text-stone-100">
+      {project.title}
+    </h1>
+
+    <div class="mt-8 text-stone-600 dark:text-stone-300 leading-relaxed space-y-4">
+      <p>{project.body}</p>
+    </div>
+
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-8 inline-flex items-center gap-2 px-5 py-2.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-sm rounded-lg hover:bg-stone-700 dark:hover:bg-stone-300 transition-colors"
+    >
+      {project.linkLabel} &rarr;
+    </a>
+  </article>
+</BaseLayout>
