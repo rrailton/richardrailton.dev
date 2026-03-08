@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Resume — Richard Railton">
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <div class="flex items-center justify-between mb-6">
+      <a
+        href="/"
+        class="text-sm text-stone-400 hover:text-stone-700 dark:hover:text-stone-300 transition-colors"
+      >
+        &larr; Back to home
+      </a>
+      <a
+        href="/resume.pdf"
+        download
+        class="px-4 py-2 text-sm border border-stone-300 dark:border-stone-600 rounded-lg hover:border-stone-500 dark:hover:border-stone-400 text-stone-700 dark:text-stone-300 transition-colors"
+      >
+        Download PDF
+      </a>
+    </div>
+
+    <object
+      data="/resume.pdf"
+      type="application/pdf"
+      class="w-full rounded-xl border border-stone-200 dark:border-stone-700"
+      style="height: calc(100vh - 12rem);"
+    >
+      <div class="flex flex-col items-center justify-center py-16 text-center">
+        <p class="text-stone-500 dark:text-stone-400 mb-4">
+          PDF preview is not available in your browser.
+        </p>
+        <a
+          href="/resume.pdf"
+          class="px-5 py-2.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-sm rounded-lg hover:bg-stone-700 dark:hover:bg-stone-300 transition-colors"
+        >
+          Download Resume PDF
+        </a>
+      </div>
+    </object>
+  </div>
+</BaseLayout>
