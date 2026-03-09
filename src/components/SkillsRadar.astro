@@ -4,7 +4,7 @@ import { skills } from "../data/content";
 
 <section id="skills" class="max-w-3xl mx-auto px-6 py-16 border-t border-stone-200 dark:border-stone-800">
   <h2 class="text-2xl font-light tracking-tight text-stone-900 dark:text-stone-100 mb-10">Skills</h2>
-  <div class="max-w-lg mx-auto">
+  <div class="max-w-sm sm:max-w-lg mx-auto">
     <canvas
       id="skills-radar"
       data-skills={JSON.stringify(skills)}
@@ -32,6 +32,7 @@ import { skills } from "../data/content";
   function renderChart() {
     if (chart) chart.destroy();
     const c = getColors();
+    const isMobile = window.innerWidth < 640;
 
     chart = new Chart(canvas, {
       type: "radar",
@@ -53,7 +54,7 @@ import { skills } from "../data/content";
         responsive: true,
         maintainAspectRatio: true,
         layout: {
-          padding: 10,
+          padding: isMobile ? 0 : 10,
         },
         scales: {
           r: {
@@ -63,7 +64,7 @@ import { skills } from "../data/content";
             grid: { color: c.grid },
             angleLines: { color: c.grid },
             pointLabels: {
-              font: { size: 13 },
+              font: { size: isMobile ? 10 : 13 },
               color: c.text,
             },
           },
