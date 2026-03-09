@@ -9,6 +9,14 @@ const {
   title = "Richard Railton — Analytics Engineer",
   description = "Richard Railton — Analytics Engineer in the San Francisco Bay Area specializing in scalable data products with dbt.",
 } = Astro.props;
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 ---
 
 <!doctype html>
@@ -38,11 +46,9 @@ const {
           richardrailton.dev
         </a>
         <div class="flex items-center gap-6 text-sm text-stone-500 dark:text-stone-400">
-          <a href="#about" class="hidden md:inline hover:text-stone-900 dark:hover:text-stone-100 transition-colors">About</a>
-          <a href="#experience" class="hidden md:inline hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Experience</a>
-          <a href="#skills" class="hidden md:inline hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Skills</a>
-          <a href="#projects" class="hidden md:inline hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Projects</a>
-          <a href="#contact" class="hidden md:inline hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Contact</a>
+          {navLinks.map(link => (
+            <a href={link.href} class="hidden md:inline hover:text-stone-900 dark:hover:text-stone-100 transition-colors">{link.label}</a>
+          ))}
           <button
             id="theme-toggle"
             class="p-1.5 rounded-md hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors"
@@ -70,16 +76,14 @@ const {
           </button>
         </div>
       </div>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden sticky top-[57px] z-40 bg-stone-100/95 dark:bg-stone-900/95 backdrop-blur border-b border-stone-200 dark:border-stone-800">
-      <div class="max-w-3xl mx-auto px-6 py-4 flex flex-col gap-4 text-sm text-stone-500 dark:text-stone-400">
-        <a href="#about" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">About</a>
-        <a href="#experience" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Experience</a>
-        <a href="#skills" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Skills</a>
-        <a href="#projects" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Projects</a>
-        <a href="#contact" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Contact</a>
+      <div id="mobile-menu" class="hidden md:hidden bg-stone-100/95 dark:bg-stone-900/95 backdrop-blur border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex flex-col gap-4 text-sm text-stone-500 dark:text-stone-400">
+          {navLinks.map(link => (
+            <a href={link.href} class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">{link.label}</a>
+          ))}
+        </div>
       </div>
-    </div>
+    </nav>
 
     <main>
       <slot />
