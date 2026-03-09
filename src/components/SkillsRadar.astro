@@ -2,9 +2,9 @@
 import { skills } from "../data/content";
 ---
 
-<section id="skills" class="max-w-3xl mx-auto px-6 py-16 border-t border-stone-200 dark:border-stone-800">
-  <h2 class="text-2xl font-light tracking-tight text-stone-900 dark:text-stone-100 mb-10">Skills</h2>
-  <div class="max-w-sm sm:max-w-lg mx-auto">
+<section id="skills" class="max-w-3xl mx-auto px-6 py-8 sm:py-16 border-t border-stone-200 dark:border-stone-800">
+  <h2 class="text-2xl font-light tracking-tight text-stone-900 dark:text-stone-100 mb-2 sm:mb-10">Skills</h2>
+  <div class="h-[300px] sm:h-auto sm:max-w-lg mx-auto">
     <canvas
       id="skills-radar"
       data-skills={JSON.stringify(skills)}
@@ -52,9 +52,9 @@ import { skills } from "../data/content";
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: !isMobile,
         layout: {
-          padding: isMobile ? 0 : 10,
+          padding: isMobile ? 20 : 10,
         },
         scales: {
           r: {
