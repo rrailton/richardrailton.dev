@@ -6,19 +6,30 @@ Personal site of Richard Railton, hosted on GitHub Pages.
 
 ## Tech Stack
 
-- Plain HTML & CSS (no framework or build system)
-- CSS Grid two-column layout
-- [Font Awesome](https://fontawesome.com/) icons via CDN
+- [Astro](https://astro.build/) static site generator
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Chart.js](https://www.chartjs.org/) for the skills radar chart
+- [TypeScript](https://www.typescriptlang.org/)
 - GitHub Pages hosting with custom domain
+- GitHub Actions for CI/CD (`.github/workflows/deploy.yml`)
 
 ## Structure
 
-| File | Purpose |
-|------|---------|
-| `index.html` | All site content |
-| `style.css` | All styling |
-| `CNAME` | Custom domain config for GitHub Pages |
+```
+src/
+├── components/   # Astro components (Hero, Timeline, Projects, etc.)
+├── data/         # Site content and configuration
+├── layouts/      # Base page layout
+├── lib/          # Utility functions
+├── pages/        # Routes (index, resume, project detail pages)
+└── styles/       # Global CSS
+```
 
 ## Local Development
 
-Open `index.html` in a browser. No build step required.
+```bash
+npm install
+npm run dev       # Start dev server
+npm run build     # Production build
+npm run preview   # Preview production build
+```
