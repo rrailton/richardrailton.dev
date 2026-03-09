@@ -19,24 +19,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Download PDF
       </a>
     </div>
-
-    <object
-      data="/railton-resume.pdf"
-      type="application/pdf"
-      class="w-full bg-white"
-      style="height: calc(100vh - 12rem);"
-    >
-      <div class="flex flex-col items-center justify-center py-16 text-center">
-        <p class="text-stone-500 dark:text-stone-400 mb-4">
-          PDF preview is not available in your browser.
-        </p>
-        <a
-          href="/railton-resume.pdf"
-          class="px-5 py-2.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-sm rounded-lg hover:bg-stone-700 dark:hover:bg-stone-300 transition-colors"
-        >
-          Download Resume PDF
-        </a>
-      </div>
-    </object>
   </div>
+
+  <object
+    data="/railton-resume.pdf#toolbar=0&view=FitH"
+    type="application/pdf"
+    class="w-full bg-white"
+    style="height: calc(100vh - 10rem);"
+  >
+    <div class="flex flex-col items-center justify-center py-16 text-center">
+      <p class="text-stone-500 dark:text-stone-400 mb-4">
+        PDF preview is not available in your browser.
+      </p>
+      <a
+        href="/railton-resume.pdf"
+        class="px-5 py-2.5 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-sm rounded-lg hover:bg-stone-700 dark:hover:bg-stone-300 transition-colors"
+      >
+        Download Resume PDF
+      </a>
+    </div>
+  </object>
 </BaseLayout>
