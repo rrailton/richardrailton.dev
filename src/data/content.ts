@@ -105,7 +105,7 @@ export const projects = [
     description:
       "Uplimit Advanced dbt course covering reusable macros, incremental models, unit testing, cost monitoring, and DAG refactoring on Snowflake.",
     external: true,
-    url: "https://github.com/rrailton/course_advanced_dbt",
+    url: "https://github.com/rrailton/course_advanced_dbt/tree/main/project_submissions",
   },
 ];
 
