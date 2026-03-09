@@ -78,18 +78,34 @@ export const projects = [
     slug: "divvy-bikeshare",
     title: "Divvy Bikeshare Analysis",
     description:
-      "Interactive Power BI report analyzing Divvy bikeshare usage patterns across Chicago.",
-    body: "An interactive Power BI dashboard built as part of the Google Data Analytics Certificate capstone. Analyzes 12 months of Divvy bikeshare trip data to uncover usage patterns between casual riders and annual members — including trip duration, popular routes, and seasonal trends. The analysis informed a set of marketing recommendations to convert casual riders to members.",
+      "Interactive Power BI dashboard analyzing Divvy bikeshare usage patterns across Chicago.",
+    body: "An interactive Power BI dashboard built as part of the Data Science and Data Analytics certificate program at UCSC Extension. Analyzes 12 months of Divvy bikeshare trip data to uncover usage patterns between casual riders and annual members — including trip duration, popular routes, and seasonal trends. The analysis informed a set of marketing recommendations to convert casual riders to members.",
     url: "https://app.powerbi.com/view?r=eyJrIjoiMzBkYWRkY2ItZmE2OS00YmJiLWJmM2QtYmIwODE0MTJhYTE5IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
     linkLabel: "View Dashboard",
   },
   {
-    slug: "github",
-    title: "GitHub Profile",
-    description: "Open source projects and data analysis work.",
-    body: "A collection of data analysis projects, scripts, and experiments. Includes work in Python, SQL, R, and dbt across domains like transportation, healthcare, and finance.",
-    url: "https://github.com/rrailton",
-    linkLabel: "View on GitHub",
+    slug: "predicting-road-accident-severity",
+    title: "Predicting Road Accident Severity",
+    description:
+      "Machine learning group project in Python predicting accident severity with KNN, Random Forest, SVM, and XGBoost.",
+    external: true,
+    url: "https://github.com/rrailton/predicting-road-accident-severity",
+  },
+  {
+    slug: "us-wildfires-and-drought",
+    title: "US Wildfires and Drought",
+    description:
+      "Exploratory data analysis of US wildfires and drought using R and linear regression.",
+    external: true,
+    url: "https://github.com/rrailton/us-wildfires-and-drought",
+  },
+  {
+    slug: "advanced-dbt-bingeflix",
+    title: "Advanced dbt — Bingeflix",
+    description:
+      "Uplimit Advanced dbt course covering reusable macros, incremental models, unit testing, cost monitoring, and DAG refactoring on Snowflake.",
+    external: true,
+    url: "https://github.com/rrailton/course_advanced_dbt",
   },
 ];
 
