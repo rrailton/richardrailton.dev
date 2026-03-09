@@ -1,6 +1,6 @@
 # richardrailton.dev
 
-A static HTML/CSS personal resume hosted on GitHub Pages.
+Personal site of Richard Railton, hosted on GitHub Pages.
 
 **Live site:** [richardrailton.dev](https://richardrailton.dev)
 
@@ -15,23 +15,10 @@ A static HTML/CSS personal resume hosted on GitHub Pages.
 
 | File | Purpose |
 |------|---------|
-| `index.html` | All resume content |
+| `index.html` | All site content |
 | `style.css` | All styling |
 | `CNAME` | Custom domain config for GitHub Pages |
 
 ## Local Development
 
 Open `index.html` in a browser. No build step required.
-
----
-
-## v1 — Original Resume
-
-Use this workshop to create something similar:
-- https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website
-
-Use this guide to add a custom .dev domain:
-- https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58
-
-View my resume here:
-- https://richardrailton.dev

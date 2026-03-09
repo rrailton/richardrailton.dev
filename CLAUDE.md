@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A static HTML/CSS personal resume hosted on GitHub Pages at https://richardrailton.dev. No build system, framework, or dependencies — just `index.html` and `style.css`.
+A static HTML/CSS personal site hosted on GitHub Pages at https://richardrailton.dev. No build system, framework, or dependencies — just `index.html` and `style.css`.
 
 ## Architecture
 
