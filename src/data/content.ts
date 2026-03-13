@@ -1,7 +1,7 @@
 export const personal = {
   name: "Richard Railton",
   location: "San Francisco Bay Area",
-  bio: "Analytics Engineer specializing in building scalable, production-grade data products with dbt. Combines analytical depth with engineering rigor to design reliable data architectures, automated observability, and self-service reporting that drive revenue growth and product innovation.",
+  bio: "Analytics Engineer who owns the full data stack at Anatomy Financial. Builds scalable dbt projects, orchestrates data pipelines, and delivers the dashboards and data products that drive revenue growth and product decisions.",
   email: "data@richardrailton.dev",
   linkedin: "https://www.linkedin.com/in/rrailton/",
   github: "https://github.com/rrailton",
