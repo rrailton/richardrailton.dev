@@ -75,6 +75,14 @@ export const education = [
 
 export const projects = [
   {
+    slug: "advanced-dbt-bingeflix",
+    title: "Advanced dbt — Bingeflix",
+    description:
+      "Uplimit Advanced dbt course covering reusable macros, incremental models, unit testing, cost monitoring, and DAG refactoring on Snowflake.",
+    external: true,
+    url: "https://github.com/rrailton/course_advanced_dbt/tree/main/project_submissions",
+  },
+  {
     slug: "divvy-bikeshare",
     title: "Divvy Bikeshare Analysis",
     description:
@@ -98,14 +106,6 @@ export const projects = [
       "Exploratory data analysis of US wildfires and drought using R and linear regression.",
     external: true,
     url: "https://github.com/rrailton/us-wildfires-and-drought",
-  },
-  {
-    slug: "advanced-dbt-bingeflix",
-    title: "Advanced dbt — Bingeflix",
-    description:
-      "Uplimit Advanced dbt course covering reusable macros, incremental models, unit testing, cost monitoring, and DAG refactoring on Snowflake.",
-    external: true,
-    url: "https://github.com/rrailton/course_advanced_dbt/tree/main/project_submissions",
   },
 ];
 
