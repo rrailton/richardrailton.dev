@@ -22,14 +22,6 @@ import { experience } from "../data/content";
             <span class="text-sm text-stone-400 dark:text-stone-500 whitespace-nowrap">{job.start} — {job.end}</span>
           </div>
 
-          <ul class="space-y-1.5">
-            {job.bullets.map((bullet) => (
-              <li class="text-sm text-stone-600 dark:text-stone-300 flex gap-2">
-                <span class="text-stone-300 dark:text-stone-600 mt-0.5 flex-shrink-0">—</span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       ))}
     </div>
