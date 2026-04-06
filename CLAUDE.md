@@ -4,24 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A static HTML/CSS personal site hosted on GitHub Pages at https://richardrailton.dev. No build system, framework, or dependencies — just `index.html` and `style.css`.
+A personal portfolio site built with **Astro + Tailwind CSS**, hosted on GitHub Pages at https://richardrailton.dev. Outputs static HTML — no server-side runtime in production.
 
 ## Architecture
 
-- `index.html` — all resume content. Two-column layout using CSS Grid: `#mainLeft` (64%, work experience + summary) and `#mainRight` (36%, contact, projects, skills, education).
-- `style.css` — all styling. Base font size is `11px` with `em` units throughout.
+- `src/pages/` — Astro page routes (`index.astro`, `resume.astro`, `projects/[slug].astro`)
+- `src/components/` — Astro components (Hero, About, Timeline, Projects, Contact, etc.)
+- `src/data/content.ts` — centralised content data
+- `src/layouts/BaseLayout.astro` — shared page layout
+- `src/styles/global.css` — global styles
+- `src/lib/utils.ts` — utility functions
+- `astro.config.mjs` — Astro config with MDX, sitemap, and Tailwind integrations
+- `tailwind.config.mjs` — Tailwind configuration
 - `CNAME` — sets the custom domain for GitHub Pages. Do not edit.
-- Icons are loaded from Font Awesome via CDN (no local asset).
+
+### Legacy files
+
+- `index.html` / `style.css` — original static resume, kept for reference
+- `_old/` — archived content
+
+## Build & Dev
+
+- `npm run dev` — start Astro dev server
+- `npm run build` — build static output to `dist/`
+- `npm run preview` — preview the built site
 
 ## Content Conventions
 
-Work experience entries follow this structure:
-```html
-<h3>Job Title | Company, Location</h3>
-<p>Month YYYY - Month YYYY</p>
-<ul>
-  <li>Impact-focused bullet starting with an action verb</li>
-</ul>
-```
-
-Commented-out content (`<!-- -->`) in `index.html` is intentionally hidden — do not remove it without confirmation.
+Commented-out content (`<!-- -->`) in source files is intentionally hidden — do not remove it without confirmation.
