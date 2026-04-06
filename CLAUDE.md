@@ -32,3 +32,10 @@ A personal portfolio site built with **Astro + Tailwind CSS**, hosted on GitHub 
 ## Content Conventions
 
 Commented-out content (`<!-- -->`) in source files is intentionally hidden — do not remove it without confirmation.
+
+## npm Security
+
+- `.npmrc` has `ignore-scripts=true` — blocks postinstall attacks. If a new dependency needs lifecycle scripts, add it to an allowlist rather than disabling this setting.
+- Dependencies are pinned to exact versions in `package.json` (no `^` or `~`). When upgrading, update both `package.json` and run `npm install` to update the lockfile.
+- CI runs `npm audit --audit-level=high` — the build fails on high/critical vulnerabilities.
+- CI runs `npm rebuild sharp` after install since ignore-scripts prevents sharp's postinstall from running.
