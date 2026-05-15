@@ -14,7 +14,8 @@ A personal portfolio site built with **Astro + Tailwind CSS**, hosted on GitHub 
 - `src/layouts/BaseLayout.astro` — shared page layout
 - `src/styles/global.css` — global styles
 - `src/lib/utils.ts` — utility functions
-- `astro.config.mjs` — Astro config with MDX, sitemap, and Tailwind integrations
+- `astro.config.mjs` — Astro config with MDX and sitemap integrations
+- `postcss.config.mjs` — PostCSS pipeline (tailwindcss + autoprefixer); Tailwind 3 is wired in here rather than via `@astrojs/tailwind`, which was deprecated in Astro 6
 - `tailwind.config.mjs` — Tailwind configuration
 - `CNAME` — sets the custom domain for GitHub Pages. Do not edit.
 
