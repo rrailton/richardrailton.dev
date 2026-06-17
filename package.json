@@ -7,11 +7,14 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "overrides": {
+    "esbuild": "0.28.1"
+  },
   "dependencies": {
     "@astrojs/mdx": "5.0.6",
     "@astrojs/sitemap": "3.7.2",
     "@tailwindcss/typography": "0.5.19",
-    "astro": "6.3.3",
+    "astro": "6.4.8",
     "autoprefixer": "10.5.0",
     "chart.js": "4.5.1",
     "clsx": "2.1.1",
