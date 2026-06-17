@@ -34,6 +34,17 @@ A personal portfolio site built with **Astro + Tailwind CSS**, hosted on GitHub 
 
 Commented-out content (`<!-- -->`) in source files is intentionally hidden — do not remove it without confirmation.
 
+## CI / GitHub Actions
+
+The deploy workflow (`.github/workflows/deploy.yml`) runs on every push to `main`, on a daily schedule, and can be triggered manually. Current action versions (all Node 24-compatible):
+
+- `actions/checkout@v6`
+- `actions/setup-node@v6`
+- `actions/upload-pages-artifact@v5`
+- `actions/deploy-pages@v5`
+
+When upgrading actions, prefer the latest major version that targets Node 24+.
+
 ## npm Security
 
 - `.npmrc` has `ignore-scripts=true` — blocks postinstall attacks. If a new dependency needs lifecycle scripts, add it to an allowlist rather than disabling this setting.
