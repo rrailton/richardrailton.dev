@@ -28,6 +28,14 @@ A personal portfolio site built with **Astro + Tailwind CSS**, hosted on GitHub 
 - `npm run build` — build static output to `dist/`
 - `npm run preview` — preview the built site
 
+## Visual regression check
+
+`npm run visual-diff` builds `origin/main` and the working tree, screenshots every page of both in headless Chromium (light and dark, 1280 and 390 wide), and reports pixel differences. Pass another baseline with `npm run visual-diff -- <ref>`. Images and diff masks land in `.visual-diff/` (gitignored). Run it before pushing dependency upgrades or styling changes.
+
+- Needs the Playwright browser once per machine: `npx playwright install chromium`. The `playwright` version is pinned; bumping it means re-running that install.
+- Both builds use the local `src/data/contributions.json`, fetched via `gh` if missing, so the contributions grid is compared too.
+- CI installs the `playwright` package but never downloads or runs the browser.
+
 ## Content Conventions
 
 Commented-out content (`<!-- -->`) in source files is intentionally hidden — do not remove it without confirmation.

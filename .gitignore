@@ -11,3 +11,6 @@ docs/
 
 # Data fetched at build time
 src/data/contributions.json
+
+# Visual regression output
+.visual-diff/
