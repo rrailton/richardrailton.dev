@@ -1,5 +1,5 @@
 {
   "permissions": {
-    "deny": ["Edit(CNAME)", "Write(CNAME)"]
+    "deny": ["Edit(CNAME)"]
   }
 }
