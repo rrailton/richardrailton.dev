@@ -40,7 +40,7 @@ const levelClasses = [
             {week.contributionDays.map((day: any) => (
               <div
                 title={`${day.date}: ${day.contributionCount} contributions`}
-                class={`w-[10px] h-[10px] rounded-sm ${levelClasses[getLevel(day.contributionCount)]}`}
+                class={`w-[10px] h-[10px] rounded-xs ${levelClasses[getLevel(day.contributionCount)]}`}
               />
             ))}
           </div>

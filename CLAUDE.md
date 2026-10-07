@@ -12,11 +12,9 @@ A personal portfolio site built with **Astro + Tailwind CSS**, hosted on GitHub 
 - `src/components/` — Astro components (Hero, About, Timeline, Projects, Contact, etc.)
 - `src/data/content.ts` — centralised content data
 - `src/layouts/BaseLayout.astro` — shared page layout
-- `src/styles/global.css` — global styles
+- `src/styles/global.css` — global styles and Tailwind 4 setup (`@import "tailwindcss"`, `@theme` fonts, class-based `dark` variant, typography plugin). There is no `tailwind.config` file.
 - `src/lib/utils.ts` — utility functions
-- `astro.config.mjs` — Astro config with MDX and sitemap integrations
-- `postcss.config.mjs` — PostCSS pipeline (tailwindcss + autoprefixer); Tailwind 3 is wired in here rather than via `@astrojs/tailwind`, which was deprecated in Astro 6
-- `tailwind.config.mjs` — Tailwind configuration
+- `astro.config.mjs` — Astro config with MDX and sitemap integrations; Tailwind 4 is wired in via the `@tailwindcss/vite` plugin
 - `CNAME` — sets the custom domain for GitHub Pages. Do not edit.
 
 ### Legacy files
